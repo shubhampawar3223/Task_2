@@ -1,0 +1,60 @@
+Que.2. Write a writup on copy by value and copy by reference?
+Ans.:
+  Copy By Value                         Copy By Reference
+-In copy by value method original      -In copy by reference method original
+value is not modified.                  value is modified.
+
+-In copy by value ,a copy of variable  -In copy by reference ,actual variable 
+is passed.                              is passed.  
+
+-In copy by value actual and formal    -In copy by reference, actual and formal 
+variables are created in different      variables are created in same
+memory locations.                       memory locations.
+
+-In copy by values we cannot alter     -In copy by reference, we can alter the values 
+the values of actual variables through  of actual variables through function calls. 
+function calls.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Que.3.How to copy by value a composite datatype.
+Ans.: 
+There are three methods to copy by value a composite datatype.
+
+1)Using the spread(...)operator.
+Spread operator allows an iterable to expand in places where 0+ arguments are expected. 
+It is mostly used in the variable array where there is more than 1 values are expected. 
+It will be a shallow copy.
+Code:
+
+ var a=[1,2,3];
+ var c =[...a];
+ c[1]= 10;
+ console.log(a,c);
+ 
+O/p-[ 1, 2, 3 ] [ 1, 10, 3 ]
+
+2)Using the Object.assign() method.
+The Object.assign() method copies all enumerable own properties from one or more source 
+objects to a target object.It will be a shallow copy.The initial '[]' ensures
+that one can't change the original object.
+
+code:
+ var a= [1,2,3];
+ var b = Object.assign([],a);
+ b[2]=10;
+ console.log(a,c);
+
+O/p-[ 1, 2, 3 ] [ 1, 2, 10 ]
+
+3)Using JSON.Stringify() and JSON.parse() method.
+We perform copy by value by using JSON.stringity() and then using JSON.parse().
+This is a deep copy.
+
+code:
+ var a= [1,2,3];
+ var b = JSON.parse(JSON.stringify(a));
+ b[0]=10;
+ console.log(a,c);
+
+O/p-[ 1, 2, 3 ] [ 10, 2, 3 ]
