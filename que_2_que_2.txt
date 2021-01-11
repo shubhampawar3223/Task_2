@@ -43,18 +43,18 @@ code:
  var a= [1,2,3];
  var b = Object.assign([],a);
  b[2]=10;
- console.log(a,c);
+ console.log(a,b);
 
 O/p-[ 1, 2, 3 ] [ 1, 2, 10 ]
 
 3)Using JSON.Stringify() and JSON.parse() method.
-We perform copy by value by using JSON.stringity() and then using JSON.parse().
+We perform copy by value by using JSON.stringify() and then using JSON.parse().
 This is a deep copy.
 
 code:
  var a= [1,2,3];
  var b = JSON.parse(JSON.stringify(a));
  b[0]=10;
- console.log(a,c);
+ console.log(a,b);
 
 O/p-[ 1, 2, 3 ] [ 10, 2, 3 ]
